@@ -22,7 +22,7 @@ h1{
 }
 
 img{
-    height: 400px
+    width: 300px
 }
 
 .page{
@@ -41,3 +41,15 @@ img{
     color: #DACA0F;
     text-align: center;
 }
+
+button{
+    background-color: #DACA0F;
+    width: 200px
+}
+
+button > a{
+    text-decoration: none;
+}
+
+button:hover {background-color: white;} 
+td:hover {background-color: white;} 
