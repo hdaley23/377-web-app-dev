@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Perimeter, Area and Volume of a Cube</title>
+        <title>Perimeter, Area and Volume</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
 
         <script src = "scripts.js"></script>
     </head>
@@ -10,18 +11,48 @@
 
         <h1>Perimeter, Area and Volume of a Cube</h1>
 
-        <form>
+        <form class = "center">
             Length: <input type="text" id="value1" name="value1" />
             <br />
             Width: <input type="text" id="value2" name="value2" />
             <br />
             Height: <input type ="text" id="value3" name="value3"/>
             <br/>
-            <button type="button" onclick= "calculate('perimeter')">Perimeter</button>
-            <button type="button" onclick="area('value2')">Area</button>
-            <button type="button" onclick="volume('value3')">Volume</button>
+            <button type="button" onclick="calculate('perimeter')">Perimeter</button>
+            <button type="button" onclick="calculate('area')">Area</button>
+            <button type="button" onclick="calculate('volume')">Volume</button>
         </form>
+        <br> 
+        <center>
+            <img src = "https://www.storyofmathematics.com/wp-content/uploads/2020/07/What-is-cube.jpg">
+        </center>
+        <br>
+        <div class = "center">
+            Result: <span id="result"></span>
+        </div>
 
-        Result: <span id="result"></span>
+        <hr> 
+
+        <h1>Perimeter, Area and Volume of an Equilateral Triangle</h1>
+
+        <form class = "center">
+            Length: <input type="text" id="value1" name="value1" />
+            <br />
+            Width: <input type="text" id="value2" name="value2" />
+            <br />
+            Height: <input type ="text" id="value3" name="value3"/>
+            <br/>
+            <button type="button" onclick="calculate('perimeter')">Perimeter</button>
+            <button type="button" onclick="calculate('area')">Area</button>
+            <button type="button" onclick="calculate('volume')">Volume</button>
+        </form>
+        <br> 
+        <center>
+            <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhib8TOdDPKxRe7fZ6B1rdJ2aiypLOEx68bg&usqp=CAU">
+        </center>
+        <br>
+        <div class = "center">
+            Result: <span id="result"></span>
+        </div>
     </body>
 </html>

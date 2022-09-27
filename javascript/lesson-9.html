@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Lesson 9 - 10</title>
+        <script src = "lesson-9.js"></script>
+        <script>
+
+            window.onload = function(){
+
+                var carObject1 = makeCar('BMW', 'M3', 23, 'white');
+                var carObject2 = makeCar('Mazda', 'CX-9', 24, 'blue');
+                var carObject3 = makeCar('Tesla', 'Model 3', 400, 'red');
+
+                var cars = [carObject1, carObject2, carObject3];
+
+                var html = '';
+
+                for (var i = 0; i <cars.length; i++){
+                    html += '<li>' + cars[i].displayName() + '</li>';
+                }
+
+                document.getElementById('cars').innerHTML = html;
+            }
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>JavaScript Lesson 9 - 10</h1>
+
+        <ul id = "cars"></ul>
+
+    </body>
+</html>

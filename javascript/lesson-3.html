@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Lesson 3</title>
+
+        <style>
+
+        #result {
+            color: red;
+        }
+
+        </style>
+
+        <script>
+
+        // var makeNumber1 = parseInt(document.getElementById("value1").value);
+        // var makeNumber2 = parseInt(document.getElementById("value2").value);
+
+        function calculate(operator){
+            var makeNumber1 = parseInt(document.getElementById("value1").value);
+            var makeNumber2 = parseInt(document.getElementById("value2").value);   
+            
+            var result = add(value1, value2);
+
+            if(operator == '-'){
+                result = subtract(value1, value2);
+            }else if(operator == '*'){
+                result = multiply(value1, value2);
+            }else if(operator == '/'){
+                result = divide(value1, value2);
+            }
+            
+            document.getElementById("result").innerHTML = result;
+        } 
+
+        function add(value1, value2) {
+            // var value1 = parseInt(document.getElementById("value1").value);
+            // var value2 = parseInt(document.getElementById("value2").value);
+
+            // var result = value1 + value2;
+
+            return a + b;
+        }
+
+        function subtract() {
+            // var value1 = parseInt(document.getElementById("value1").value);
+            // var value2 = parseInt(document.getElementById("value2").value);
+
+            // var result = value1 - value2;
+
+            // document.getElementById("result").innerHTML = result;
+
+            return b - a;
+        }
+
+        function multiply() {
+            // var value1 = parseInt(document.getElementById("value1").value);
+            // var value2 = parseInt(document.getElementById("value2").value);
+
+            // var result = value1 * value2;
+
+            // document.getElementById("result").innerHTML = result;
+
+            return a * b;
+        }
+
+        function divide() {
+            // var value1 = parseInt(document.getElementById("value1").value);
+            // var value2 = parseInt(document.getElementById("value2").value);
+
+            // var result = value1 / value2;
+
+            // document.getElementById("result").innerHTML = result;
+
+            return a/b;
+        }
+        </script>
+    </head>
+
+    <body>
+
+        <h1>JavaScript Lesson 3</h1>
+
+        <p>
+            The focus of this lesson is <b>functions</b>. We will use this calculator example to
+            explore how functions work, use parameters, return values, and call other functions.
+        </p>
+
+        <form>
+            Value 1: <input type="text" id="value1" name="value1" />
+            <br />
+            Value 2: <input type="text" id="value2" name="value2" />
+            <br />
+            <button type="button" onclick="calculate('+')">+</button>
+            <button type="button" onclick="subtract()">-</button>
+            <button type="button" onclick="multiply()">*</button>
+            <button type="button" onclick="divide()">/</button>
+        </form>
+
+        Result: <span id="result"></span>
+    </body>
+</html>

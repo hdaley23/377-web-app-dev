@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <style>
+            form{
+                font-size: 16px;
+            }
+
+            input{
+                color: green;
+            }
+        </style>
+
+        <script>
+            function helloWorld(){
+                var name = document.getElementById("name").value;
+                var hobby = document.getElementById("hobby").value;
+                var response = "Hello " + name + ", I like " + hobby + " too.";
+
+                //annoying to have alerts
+                //alert(response);
+
+                //better way is to update the DOM
+                document.getElementById("greeting").innerHTML += "<br>" + response;
+            }
+        </script>
+
         <title>Hello World</title>
     </head>
 
@@ -12,5 +36,27 @@
             <li>Web App Dev</li>
             <li>AP Calc</li>
         </ul>
+
+        <hr>
+
+        <h1>My First Form</h1>
+
+        <form>
+            What is your name?<br>
+            <input type = "text" placeholder = "Enter your name" size = "50" id = "name">
+
+            <br><br>
+
+            What do you like to do in your spare time?<br>
+            <input type = "text" placeholder = "Enter a hobby" size = "50" id = "hobby">
+
+            <br><br>
+
+            <input type = "button" value = "Click Me" onclick = "helloWorld()">
+        </form>
+
+        &lt;br&gt;
+
+        <h2 id = "greeting"></h2>
     </body>
 </html>

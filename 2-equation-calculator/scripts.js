@@ -7,9 +7,9 @@ function calculate(equation){
 
     if(equation == 'perimeter'){
         result = perimeter(value1, value2);
-    }else if(operator == 'area'){
-        result = area(lvalue1, value3);
-    }else if(operator == 'volume'){
+    }else if(equation == 'area'){
+        result = area(value1, value2);
+    }else if(equation == 'volume'){
         result = volume(value1, value2, value3);
     }
     
@@ -27,4 +27,5 @@ function area(value1, value2) {
 function volume(value1, value2, value3) {
     return value1 * value2 * value3;
 }
+
 
