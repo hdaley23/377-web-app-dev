@@ -16,4 +16,8 @@ body{
     text-align: center;
 }
 
-button:hover {background-color: green;} 
+button:hover {background-color: green;}
+
+img{
+    width: 250px;
+}

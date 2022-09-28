@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Perimeter, Area and Volume</title>
+        
         <link rel="stylesheet" type="text/css" href="styles.css">
 
         <script src = "scripts.js"></script>
@@ -18,41 +19,46 @@
             <br />
             Height: <input type ="text" id="value3" name="value3"/>
             <br/>
-            <button type="button" onclick="calculate('perimeter')">Perimeter</button>
-            <button type="button" onclick="calculate('area')">Area</button>
-            <button type="button" onclick="calculate('volume')">Volume</button>
+            <button type="button" onclick="calculate('perimeter')">Perimeter of a Face</button>
+            <button type="button" onclick="calculate('area')">Area of a Face</button>
+            <button type="button" onclick="calculate('volume')">Volume of a Cube</button>
         </form>
+
         <br> 
         <center>
             <img src = "https://www.storyofmathematics.com/wp-content/uploads/2020/07/What-is-cube.jpg">
         </center>
         <br>
+
         <div class = "center">
-            Result: <span id="result"></span>
+            Result: <span id="result1"></span>
         </div>
 
         <hr> 
 
-        <h1>Perimeter, Area and Volume of an Equilateral Triangle</h1>
+        <h1>Perimeter, Area and Volume of a Pyramid</h1>
 
         <form class = "center">
-            Length: <input type="text" id="value1" name="value1" />
+            Base: <input type="text" id="value4" name="value4" />
             <br />
-            Width: <input type="text" id="value2" name="value2" />
+            Width: <input type="text" id="value5" name="value5" />
             <br />
-            Height: <input type ="text" id="value3" name="value3"/>
+            Height: <input type ="text" id="value6" name="value6"/>
             <br/>
-            <button type="button" onclick="calculate('perimeter')">Perimeter</button>
-            <button type="button" onclick="calculate('area')">Area</button>
-            <button type="button" onclick="calculate('volume')">Volume</button>
+            <button type="button" onclick="calculateTri('perimeter')">Perimeter of the Base</button>
+            <button type="button" onclick="calculateTri('area')">Area of the Base</button>
+            <button type="button" onclick="calculateTri('volume')">Volume of Pyramid</button>
         </form>
+
         <br> 
         <center>
-            <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhib8TOdDPKxRe7fZ6B1rdJ2aiypLOEx68bg&usqp=CAU">
+            <img src = "data:image/png;base64,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">
         </center>
         <br>
+
         <div class = "center">
-            Result: <span id="result"></span>
+            Result: <span id="result2"></span>
         </div>
+
     </body>
 </html>
