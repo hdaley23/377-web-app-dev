@@ -6,57 +6,148 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         <script>
+
+            var point = 0;
+
+            function allOff(){
+                $(d1p1).attr("visibility","hidden");
+                $(d1p2).attr("visibility","hidden");
+                $(d1p3).attr("visibility","hidden");
+                $(d1p4).attr("visibility","hidden");
+                $(d1p5).attr("visibility","hidden");
+                $(d1p6).attr("visibility","hidden");
+                $(d1p7).attr("visibility","hidden");
+                $(d2p1).attr("visibility","hidden");
+                $(d2p2).attr("visibility","hidden");
+                $(d2p3).attr("visibility","hidden");
+                $(d2p4).attr("visibility","hidden");
+                $(d2p5).attr("visibility","hidden");
+                $(d2p6).attr("visibility","hidden");
+                $(d2p7).attr("visibility","hidden");
+            }
+
+
+            $(document).ready(function(){
+                allOff();
+            });
+
             function rollDice(){
-                var number = Math.floor(Math.random()*6+1);
-                if (number == 1){
-                    $(dot7).attr("visibility","visible");
-                }else if(number == 2){
-                    $(dot1).attr("visibility","visible");
-                    $(dot6).attr("visibility","visible");
-                }else if(number == 3){
-                    $(dot1).attr("visibility","visible");
-                    $(dot6).attr("visibility","visible"); 
-                    $(dot7).attr("visibility","visible");
-                }else if(number == 4){
-                    $(dot1).attr("visibility","visible");
-                    $(dot3).attr("visibility","visible");
-                    $(dot4).attr("visibility","visible");
-                    $(dot6).attr("visibility","visible");
-                }else if(number == 5){
-                    $(dot1).attr("visibility","visible");
-                    $(dot3).attr("visibility","visible");
-                    $(dot4).attr("visibility","visible");
-                    $(dot6).attr("visibility","visible");
-                    $(dot7).attr("visibility","visible");
-                }else if(number == 6){
-                    $(dot1).attr("visibility","visible");
-                    $(dot2).attr("visibility","visible");
-                    $(dot3).attr("visibility","visible");
-                    $(dot4).attr("visibility","visible");
-                    $(dot5).attr("visibility","visible");
-                    $(dot6).attr("visibility","visible");
+                var number1 = Math.floor(Math.random()*6+1);
+                var number2 = Math.floor(Math.random()*6+1);
+                var total = number1+number2;
+                allOff();
+                if (number1 == 1){
+                    $(d1p7).attr("visibility","visible");
+                }else if(number1 == 2){
+                    $(d1p1).attr("visibility","visible");
+                    $(d1p6).attr("visibility","visible");
+                }else if(number1 == 3){
+                    $(d1p1).attr("visibility","visible");
+                    $(d1p6).attr("visibility","visible"); 
+                    $(d1p7).attr("visibility","visible");
+                }else if(number1 == 4){
+                    $(d1p1).attr("visibility","visible");
+                    $(d1p3).attr("visibility","visible");
+                    $(d1p4).attr("visibility","visible");
+                    $(d1p6).attr("visibility","visible");
+                }else if(number1 == 5){
+                    $(d1p1).attr("visibility","visible");
+                    $(d1p3).attr("visibility","visible");
+                    $(d1p4).attr("visibility","visible");
+                    $(d1p6).attr("visibility","visible");
+                    $(d1p7).attr("visibility","visible");
+                }else if(number1 == 6){
+                    $(d1p1).attr("visibility","visible");
+                    $(d1p2).attr("visibility","visible");
+                    $(d1p3).attr("visibility","visible");
+                    $(d1p4).attr("visibility","visible");
+                    $(d1p5).attr("visibility","visible");
+                    $(d1p6).attr("visibility","visible");
+                }
+
+                if (number2 == 1){
+                    $(d2p7).attr("visibility","visible");
+                }else if(number2 == 2){
+                    $(d2p1).attr("visibility","visible");
+                    $(d2p6).attr("visibility","visible");
+                }else if(number2 == 3){
+                    $(d2p1).attr("visibility","visible");
+                    $(d2p6).attr("visibility","visible"); 
+                    $(d2p7).attr("visibility","visible");
+                }else if(number2 == 4){
+                    $(d2p1).attr("visibility","visible");
+                    $(d2p3).attr("visibility","visible");
+                    $(d2p4).attr("visibility","visible");
+                    $(d2p6).attr("visibility","visible");
+                }else if(number2 == 5){
+                    $(d2p1).attr("visibility","visible");
+                    $(d2p3).attr("visibility","visible");
+                    $(d2p4).attr("visibility","visible");
+                    $(d2p6).attr("visibility","visible");
+                    $(d2p7).attr("visibility","visible");
+                }else if(number2 == 6){
+                    $(d2p1).attr("visibility","visible");
+                    $(d2p2).attr("visibility","visible");
+                    $(d2p3).attr("visibility","visible");
+                    $(d2p4).attr("visibility","visible");
+                    $(d2p5).attr("visibility","visible");
+                    $(d2p6).attr("visibility","visible");
+                }
+                if(point == 0){
+                    if(total == 7 || total == 11){
+                        document.getElementById("outcome").innerHTML = "Win";
+                    }else if(total == 2|| total == 3|| total == 12){
+                        document.getElementById("outcome").innerHTML = "Loss";
+                    }else{
+                        document.getElementById("outcome").innterHTML = "Roll again";
+                        point = total;
+                    }
+                }else{
+                    if(total == point){
+                        document.getElementById("outcome").innerHTML = "Win";
+                    }else if(total == 7){
+                        document.getElementById("outcome").innerHTML = "Loss";
+                    }
                 }
             }
+
+
+                
+                
+                
+
+
         </script>
     </head>
 
     <body>
         <svg width="500" height="500" stroke="black">
             <symbol id="dice">
-                <rect id="dice1" x="150" y="150" width="200" height="200" fill="white" stroke="black"/>
-                <circle id="dot1" cx="200" cy="200" r="10" fill="black" visibility="hidden"/>
-                <circle id="dot2" cx="200" cy="250" r="10" fill="black" visibility="hidden"/>
-                <circle id="dot3" cx="200" cy="300" r="10" fill="black" visibility="hidden"/>
-                <circle id="dot4" cx="300" cy="200" r="10" fill="black" visibility="hidden"/>
-                <circle id="dot5" cx="300" cy="250" r="10" fill="black" visibility="hidden"/>
-                <circle id="dot6" cx="300" cy="300" r="10" fill="black" visibility="hidden"/>
-                <circle id="dot7" cx="250" cy="250" r="10" fill="black" visibility="hidden"/>
+                <rect id="d1" x="100" y="150" width="200" height="200" fill="white" stroke="black"/>
+                <circle id="d1p1" cx="150" cy="200" r="10" fill="black" visibility="hidden"/>
+                <circle id="d1p2" cx="150" cy="250" r="10" fill="black" visibility="hidden"/>
+                <circle id="d1p3" cx="150" cy="300" r="10" fill="black" visibility="hidden"/>
+                <circle id="d1p4" cx="250" cy="200" r="10" fill="black" visibility="hidden"/>
+                <circle id="d1p5" cx="250" cy="250" r="10" fill="black" visibility="hidden"/>
+                <circle id="d1p6" cx="250" cy="300" r="10" fill="black" visibility="hidden"/>
+                <circle id="d1p7" cx="200" cy="250" r="10" fill="black" visibility="hidden"/>
+            </symbol>
+
+            <symbol id="dice2">
+                <rect id="dice2" x="300" y="150" width="200" height="200" fill="white" stroke="black"/>
+                <circle id="d2p1" cx="350" cy="200" r="10" fill="black" visibility="hidden"/>
+                <circle id="d2p2" cx="350" cy="250" r="10" fill="black" visibility="hidden"/>
+                <circle id="d2p3" cx="350" cy="300" r="10" fill="black" visibility="hidden"/>
+                <circle id="d2p4" cx="450" cy="200" r="10" fill="black" visibility="hidden"/>
+                <circle id="d2p5" cx="450" cy="250" r="10" fill="black" visibility="hidden"/>
+                <circle id="d2p6" cx="450" cy="300" r="10" fill="black" visibility="hidden"/>
+                <circle id="d2p7" cx="200" cy="250" r="10" fill="black" visibility="hidden"/>
             </symbol>
 
             <use href="#dice"/>
+            <use href="#dice2"/>
         </svg>
-
-    
+        <p id = "outcome"></p>
 
         <button onclick="rollDice()">Roll</button>
     </body>
