@@ -11,7 +11,7 @@
 
             function allOff(){
                 $("circle").attr("visibility","hidden");
- 
+
             }
 
             $(document).ready(function(){
@@ -21,21 +21,32 @@
             function rollDice(){
                 allOff();
                 var total = rollDie(1) + rollDie(2);
+                var money = 105;
+                var bet = 5;
 
                 if(point == 0){
                     if(total == 7 || total == 11){
-                        document.getElementById("outcome").innerHTML = "Win";
+                        $("#outcome").text("You win!");
+                        money = money + bet;
+                        $("#betting").text("Total: " + "$" + money);
                     }else if(total == 2|| total == 3|| total == 12){
-                        document.getElementById("outcome").innerHTML = "Loss";
+                        $("#outcome").text("You Lose");
+                        money = money - bet;
+                        $("#betting").text("Total: " + "$" + money);
+
                     }else{
-                        document.getElementById("outcome").innterHTML = "Roll again";
+                        $("#outcome").text("Number to win: " + total);
                         point = total;
                     }
                 }else{
                     if(total == point){
-                        document.getElementById("outcome").innerHTML = "Win";
+                        $("#outcome").text("You win!");
+                        money = money + bet;
+                        $("#betting").text("Total: " + "$" + money);
                     } else if(total == 7){
-                        document.getElementById("outcome").innerHTML = "Loss";
+                        $("#outcome").text("You Lose");
+                        money = money - bet;
+                        $("#betting").text("Total: " + "$" + money);
                     }
                 }
             }
@@ -71,6 +82,8 @@
                     $("#d" + number + "p5").attr("visibility","visible");
                     $("#d" + number + "p6").attr("visibility","visible");
                 }
+
+                return number1;
             }
 
     </script>
@@ -101,7 +114,10 @@
                 <circle id="d2p7" cx="200" cy="250" r="10" fill="black" visibility="hidden"/>
             </g>
         </svg>
+
+        <p id = "betting"></p>
         <p id = "outcome"></p>
+
 
         <button onclick="rollDice()">Roll</button>
     </body>
