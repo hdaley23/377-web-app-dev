@@ -19,67 +19,8 @@
             });
 
             function rollDice(){
-                var number1 = Math.floor(Math.random()*6+1);
-                var number2 = Math.floor(Math.random()*6+1);
-                var total = number1+number2;
                 allOff();
-                if (number1 == 1){
-                    $("#d1p7").attr("visibility","visible");
-                }else if(number1 == 2){
-                    $("#d1p1").attr("visibility","visible");
-                    $("#d1p6").attr("visibility","visible");
-                }else if(number1 == 3){
-                    $("#d1p1").attr("visibility","visible");
-                    $("#d1p6").attr("visibility","visible"); 
-                    $("#d1p7").attr("visibility","visible");
-                }else if(number1 == 4){
-                    $("#d1p1").attr("visibility","visible");
-                    $("#d1p3").attr("visibility","visible");
-                    $("#d1p4").attr("visibility","visible");
-                    $("#d1p6").attr("visibility","visible");
-                }else if(number1 == 5){
-                    $("#d1p1").attr("visibility","visible");
-                    $("#d1p3").attr("visibility","visible");
-                    $("#d1p4").attr("visibility","visible");
-                    $("#d1p6").attr("visibility","visible");
-                    $("#d1p7").attr("visibility","visible");
-                }else if(number1 == 6){
-                    $("#d1p1").attr("visibility","visible");
-                    $("#d1p2").attr("visibility","visible");
-                    $("#d1p3").attr("visibility","visible");
-                    $("#d1p4").attr("visibility","visible");
-                    $("#d1p5").attr("visibility","visible");
-                    $("#d1p6").attr("visibility","visible");
-                }
-
-                if (number2 == 1){
-                    $("#d2p7").attr("visibility","visible");
-                }else if(number2 == 2){
-                    $("#d2p1").attr("visibility","visible");
-                    $("#d2p6").attr("visibility","visible");
-                }else if(number2 == 3){
-                    $("#d2p1").attr("visibility","visible");
-                    $("#d2p6").attr("visibility","visible"); 
-                    $("#d2p7").attr("visibility","visible");
-                }else if(number2 == 4){
-                    $("#d2p1").attr("visibility","visible");
-                    $("#d2p3").attr("visibility","visible");
-                    $("#d2p4").attr("visibility","visible");
-                    $("#d2p6").attr("visibility","visible");
-                }else if(number2 == 5){
-                    $("#d2p1").attr("visibility","visible");
-                    $("#d2p3").attr("visibility","visible");
-                    $("#d2p4").attr("visibility","visible");
-                    $("#d2p6").attr("visibility","visible");
-                    $("#d2p7").attr("visibility","visible");
-                }else if(number2 == 6){
-                    $("#d2p1").attr("visibility","visible");
-                    $("#d2p2").attr("visibility","visible");
-                    $("#d2p3").attr("visibility","visible");
-                    $("#d2p4").attr("visibility","visible");
-                    $("#d2p5").attr("visibility","visible");
-                    $("#d2p6").attr("visibility","visible");
-                }
+                var total = rollDie(1) + rollDie(2);
 
                 if(point == 0){
                     if(total == 7 || total == 11){
@@ -99,13 +40,46 @@
                 }
             }
 
+            function rollDie(number){
+                var number1 = Math.floor(Math.random()*6+1);
+
+                if (number1 == 1){
+                    $("#d" + number + "p7").attr("visibility","visible");
+                }else if(number1 == 2){
+                    $("#d" + number + "p1").attr("visibility","visible");
+                    $("#d" + number + "p6").attr("visibility","visible");
+                }else if(number1 == 3){
+                    $("#d" + number + "p1").attr("visibility","visible");
+                    $("#d" + number + "p6").attr("visibility","visible"); 
+                    $("#d" + number + "p7").attr("visibility","visible");
+                }else if(number1 == 4){
+                    $("#d" + number + "p1").attr("visibility","visible");
+                    $("#d" + number + "p3").attr("visibility","visible");
+                    $("#d" + number + "p4").attr("visibility","visible");
+                    $("#d" + number + "p6").attr("visibility","visible");
+                }else if(number1 == 5){
+                    $("#d" + number + "p1").attr("visibility","visible");
+                    $("#d" + number + "p3").attr("visibility","visible");
+                    $("#d" + number + "p4").attr("visibility","visible");
+                    $("#d" + number + "p6").attr("visibility","visible");
+                    $("#d" + number + "p7").attr("visibility","visible");
+                }else if(number1 == 6){
+                    $("#d" + number + "p1").attr("visibility","visible");
+                    $("#d" + number + "p2").attr("visibility","visible");
+                    $("#d" + number + "p3").attr("visibility","visible");
+                    $("#d" + number + "p4").attr("visibility","visible");
+                    $("#d" + number + "p5").attr("visibility","visible");
+                    $("#d" + number + "p6").attr("visibility","visible");
+                }
+            }
+
     </script>
 
     </head>
 
     <body>
         <svg width="500" height="500" stroke="black">
-            <g id="dice">
+            <g>
                 <rect id="d1" x="100" y="150" width="200" height="200" fill="white" stroke="black"/>
                 <circle id="d1p1" cx="150" cy="200" r="10" fill="black" visibility="hidden"/>
                 <circle id="d1p2" cx="150" cy="250" r="10" fill="black" visibility="hidden"/>
@@ -116,7 +90,7 @@
                 <circle id="d1p7" cx="200" cy="250" r="10" fill="black" visibility="hidden"/>
             </g>
 
-            <g id="dice2">
+            <g>
                 <rect id="dice2" x="300" y="150" width="200" height="200" fill="white" stroke="black"/>
                 <circle id="d2p1" cx="350" cy="200" r="10" fill="black" visibility="hidden"/>
                 <circle id="d2p2" cx="350" cy="250" r="10" fill="black" visibility="hidden"/>
