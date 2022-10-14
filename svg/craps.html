@@ -8,6 +8,8 @@
         <script>
 
             var point = 0;
+            var money = 105;
+            var bet = parseInt(prompt("Enter a bet: "));
 
             function allOff(){
                 $("circle").attr("visibility","hidden");
@@ -16,23 +18,32 @@
 
             $(document).ready(function(){
                 allOff();
+                if (bet < 5){
+                    bet = parseInt(prompt("Enter a bet more than $5: "));
+                }
+                if(bet > money){
+                    bet = parseInt(prompt("Enter a bet less than $" + money + ": "));
+                }
+                $("#bets").text("Bet Placed: "+bet);
+                $("#money").text("Winnings: "+ money);
             });
+
+
 
             function rollDice(){
                 allOff();
                 var total = rollDie(1) + rollDie(2);
-                var money = 105;
-                var bet = 5;
 
+            
                 if(point == 0){
                     if(total == 7 || total == 11){
                         $("#outcome").text("You win!");
                         money = money + bet;
-                        $("#betting").text("Total: " + "$" + money);
+                        $("#money").text("Winnings: " + "$" + money);
                     }else if(total == 2|| total == 3|| total == 12){
                         $("#outcome").text("You Lose");
                         money = money - bet;
-                        $("#betting").text("Total: " + "$" + money);
+                        $("#money").text("Winnings: " + "$" + money);
 
                     }else{
                         $("#outcome").text("Number to win: " + total);
@@ -42,11 +53,11 @@
                     if(total == point){
                         $("#outcome").text("You win!");
                         money = money + bet;
-                        $("#betting").text("Total: " + "$" + money);
+                        $("#money").text("Winnings: " + "$" + money);
                     } else if(total == 7){
                         $("#outcome").text("You Lose");
                         money = money - bet;
-                        $("#betting").text("Total: " + "$" + money);
+                        $("#money").text("Winnings: " + "$" + money);
                     }
                 }
             }
@@ -111,14 +122,15 @@
                 <circle id="d2p4" cx="450" cy="200" r="10" fill="black" visibility="hidden"/>
                 <circle id="d2p5" cx="450" cy="250" r="10" fill="black" visibility="hidden"/>
                 <circle id="d2p6" cx="450" cy="300" r="10" fill="black" visibility="hidden"/>
-                <circle id="d2p7" cx="200" cy="250" r="10" fill="black" visibility="hidden"/>
+                <circle id="d2p7" cx="400" cy="250" r="10" fill="black" visibility="hidden"/>
             </g>
         </svg>
 
-        <p id = "betting"></p>
+        <p id = "bets"></p>
+        <p id = "money"></p>
         <p id = "outcome"></p>
 
 
-        <button onclick="rollDice()">Roll</button>
+        <button onclick="rollDice()">Roll!</button>
     </body>
 </html>
