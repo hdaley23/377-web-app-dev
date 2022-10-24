@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+        <script src = "scripts.js"></script>
+        <h1>Tic Tac Toe</h1>
+    </head>
+
+    <body>
+        <svg width="600" height="600" stroke="black">
+            <g id = "grid">
+                <rect x="200" y="0" width="10" height="600" fill="black"/>
+                <rect x="400" y="0" width="10" height="600" fill="black"/>
+    
+                <rect x="0" y="200" width="600" height="10" fill="black"/>
+                <rect x="0" y="400" width="600" height="10" fill="black"/>
+            </g>
+
+            <g id = "clickableRects">
+                <rect id = "spot1" class="clickable" onclick="elementClicked(evt,0)" x="0" y="0" width="200" height="200" fill-opacity="0"/>
+                <rect id = "spot2" class="clickable" onclick="elementClicked(evt,1)" x="200" y="0" width="200" height="200" fill-opacity="0"/>
+                <rect id = "spot3" class="clickable" onclick="elementClicked(evt,2)" x="400" y="0" width="200" height="200" fill-opacity="0"/>
+                <rect id = "spot4" class="clickable" onclick="elementClicked(evt,3)" x="0" y="200" width="200" height="200" fill-opacity="0"/>
+                <rect id = "spot5" class="clickable" onclick="elementClicked(evt,4)" x="200" y="200" width="200" height="200" fill-opacity="0"/>
+                <rect id = "spot6" class="clickable" onclick="elementClicked(evt,5)" x="400" y="200" width="200" height="200" fill-opacity="0"/>
+                <rect id = "spot7" class="clickable" onclick="elementClicked(evt,6)" x="0" y="400" width="200" height="200" fill-opacity="0"/>
+                <rect id = "spot8" class="clickable" onclick="elementClicked(evt,7)" x="200" y="400" width="200" height="200" fill-opacity="0"/>
+                <rect id = "spot9" class="clickable" onclick="elementClicked(evt,8)" x="400" y="400" width="200" height="200" fill-opacity="0"/>
+            </g>
+
+            <g id = "X's">
+                <line x1= "0" y1 = "0" x2 = "200" y2 = "200" stroke = "blue" stroke-width = "10"/>
+                <line />
+                
+            </g>
+
+            <g id = "O's">
+                
+            </g>
+            
+
+        </svg>
+    </body>
+</html>
