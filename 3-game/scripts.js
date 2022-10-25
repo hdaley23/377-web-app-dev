@@ -1,35 +1,39 @@
+var spots = ["spot1", "spot2", "spot3", "spot4", "spot5", "spot6", "spot7", "spot8", "spot9"];
+
 $(document).ready(function () {
     setXandO();
 });
 
 function setXandO() {
-  for (var i = 0; i < 9; i++){
-    var allX = "#x" + i;
+  for (var i = 0; i < 10; i++){
+    var allX = "#sp" + i + "x";
     $(allX).attr("visibility","hidden");
 
-    var allO = "#o" + i;
+    var allO = "#sp" + i + "o";
     $(allO).attr("visibility","hidden");
   }
 }
 
 function elementClicked(evt, spotNumber){
     if (spotNumber == 1){
-        $(x1).attr("visibility","visible");
+        $("#sp1x").attr("visibility","visible");
+        spots.remove("spot1");
     }else if (spotNumber == 2){
-        $(x2).attr("visibility","visible");
+        $("#sp2x").attr("visibility","visible");
     }else if (spotNumber == 3){
-        $(x3).attr("visibility","visible");
+        $("#sp3x").attr("visibility","visible");
     }else if (spotNumber == 4){
-        $(x4).attr("visibility","visible");
+        $("#sp4x").attr("visibility","visible");
     }else if (spotNumber == 5){
-        $(x5).attr("visibility","visible");
+        $("#sp5x").attr("visibility","visible");
     }else if (spotNumber == 6){
-        $(x6).attr("visibility","visible");
+        $("#sp6x").attr("visibility","visible");
     }else if (spotNumber == 7){
-        $(x7).attr("visibility","visible");
+        $("#sp7x").attr("visibility","visible");
     }else if (spotNumber == 8){
-        $(x8).attr("visibility","visible");
+        $("#sp8x").attr("visibility","visible");
     }else if (spotNumber ==9){
-        $(x9).attr("visibility","visible");
+        $("#sp9x").attr("visibility","visible");
     }
+
 }
