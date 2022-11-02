@@ -12,116 +12,120 @@
     </head>
 
     <body>
-        <svg width="600" height="600" stroke="black">
-            <g id = "clickableRects">
-                <rect id = "spot1" class="clickable" onclick="elementClicked(evt,1)" x="0" y="0" width="200" height="200" fill-opacity="0"/>
-                <rect id = "spot2" class="clickable" onclick="elementClicked(evt,2)" x="200" y="0" width="200" height="200" fill-opacity="0"/>
-                <rect id = "spot3" class="clickable" onclick="elementClicked(evt,3)" x="400" y="0" width="200" height="200" fill-opacity="0"/>
-                <rect id = "spot4" class="clickable" onclick="elementClicked(evt,4)" x="0" y="200" width="200" height="200" fill-opacity="0"/>
-                <rect id = "spot5" class="clickable" onclick="elementClicked(evt,5)" x="200" y="200" width="200" height="200" fill-opacity="0"/>
-                <rect id = "spot6" class="clickable" onclick="elementClicked(evt,6)" x="400" y="200" width="200" height="200" fill-opacity="0"/>
-                <rect id = "spot7" class="clickable" onclick="elementClicked(evt,7)" x="0" y="400" width="200" height="200" fill-opacity="0"/>
-                <rect id = "spot8" class="clickable" onclick="elementClicked(evt,8)" x="200" y="400" width="200" height="200" fill-opacity="0"/>
-                <rect id = "spot9" class="clickable" onclick="elementClicked(evt,9)" x="400" y="400" width="200" height="200" fill-opacity="0"/>
-            </g>
+        <center>
+            <svg width="600" height="600" stroke="black">
+                <g id = "clickableRects">
+                    <rect id = "spot1" class="clickable" onclick="elementClicked(evt,1)" x="0" y="0" width="200" height="200" fill-opacity="0"/>
+                    <rect id = "spot2" class="clickable" onclick="elementClicked(evt,2)" x="200" y="0" width="200" height="200" fill-opacity="0"/>
+                    <rect id = "spot3" class="clickable" onclick="elementClicked(evt,3)" x="400" y="0" width="200" height="200" fill-opacity="0"/>
+                    <rect id = "spot4" class="clickable" onclick="elementClicked(evt,4)" x="0" y="200" width="200" height="200" fill-opacity="0"/>
+                    <rect id = "spot5" class="clickable" onclick="elementClicked(evt,5)" x="200" y="200" width="200" height="200" fill-opacity="0"/>
+                    <rect id = "spot6" class="clickable" onclick="elementClicked(evt,6)" x="400" y="200" width="200" height="200" fill-opacity="0"/>
+                    <rect id = "spot7" class="clickable" onclick="elementClicked(evt,7)" x="0" y="400" width="200" height="200" fill-opacity="0"/>
+                    <rect id = "spot8" class="clickable" onclick="elementClicked(evt,8)" x="200" y="400" width="200" height="200" fill-opacity="0"/>
+                    <rect id = "spot9" class="clickable" onclick="elementClicked(evt,9)" x="400" y="400" width="200" height="200" fill-opacity="0"/>
+                </g>
 
-            <g id = "sp1x">
-                <line x1= "0" y1 = "0" x2 = "200" y2 = "200" stroke = "blue" stroke-width = "10"/>
-                <line x1= "200" y1 = "0" x2 = "0" y2 = "200" stroke = "blue" stroke-width = "10"/>   
-            </g>
+                <g id = "sp1x">
+                    <line x1= "0" y1 = "0" x2 = "200" y2 = "200" stroke = "blue" stroke-width = "10"/>
+                    <line x1= "200" y1 = "0" x2 = "0" y2 = "200" stroke = "blue" stroke-width = "10"/>   
+                </g>
 
-            <g id = "sp2x">
-                <line x1= "200" y1 = "0" x2 = "400" y2 = "200" stroke = "blue" stroke-width = "10"/>
-                <line x1= "400" y1 = "0" x2 = "200" y2 = "200" stroke = "blue" stroke-width = "10"/>   
-            </g>
+                <g id = "sp2x">
+                    <line x1= "200" y1 = "0" x2 = "400" y2 = "200" stroke = "blue" stroke-width = "10"/>
+                    <line x1= "400" y1 = "0" x2 = "200" y2 = "200" stroke = "blue" stroke-width = "10"/>   
+                </g>
 
-            <g id = "sp3x">
-                <line x1= "400" y1 = "0" x2 = "600" y2 = "200" stroke = "blue" stroke-width = "10"/>
-                <line x1= "600" y1 = "0" x2 = "400" y2 = "200" stroke = "blue" stroke-width = "10"/>   
-            </g>
+                <g id = "sp3x">
+                    <line x1= "400" y1 = "0" x2 = "600" y2 = "200" stroke = "blue" stroke-width = "10"/>
+                    <line x1= "600" y1 = "0" x2 = "400" y2 = "200" stroke = "blue" stroke-width = "10"/>   
+                </g>
 
-            <g id = "sp4x">
-                <line x1= "0" y1 = "200" x2 = "200" y2 = "400" stroke = "blue" stroke-width = "10"/>
-                <line x1= "200" y1 = "200" x2 = "0" y2 = "400" stroke = "blue" stroke-width = "10"/>   
-            </g>
+                <g id = "sp4x">
+                    <line x1= "0" y1 = "200" x2 = "200" y2 = "400" stroke = "blue" stroke-width = "10"/>
+                    <line x1= "200" y1 = "200" x2 = "0" y2 = "400" stroke = "blue" stroke-width = "10"/>   
+                </g>
 
-            <g id = "sp5x">
-                <line x1= "200" y1 = "200" x2 = "400" y2 = "400" stroke = "blue" stroke-width = "10"/>
-                <line x1= "400" y1 = "200" x2 = "200" y2 = "400" stroke = "blue" stroke-width = "10"/>   
-            </g>
+                <g id = "sp5x">
+                    <line x1= "200" y1 = "200" x2 = "400" y2 = "400" stroke = "blue" stroke-width = "10"/>
+                    <line x1= "400" y1 = "200" x2 = "200" y2 = "400" stroke = "blue" stroke-width = "10"/>   
+                </g>
 
-            <g id = "sp6x">
-                <line x1= "400" y1 = "200" x2 = "600" y2 = "400" stroke = "blue" stroke-width = "10"/>
-                <line x1= "600" y1 = "200" x2 = "400" y2 = "400" stroke = "blue" stroke-width = "10"/>   
-            </g>
+                <g id = "sp6x">
+                    <line x1= "400" y1 = "200" x2 = "600" y2 = "400" stroke = "blue" stroke-width = "10"/>
+                    <line x1= "600" y1 = "200" x2 = "400" y2 = "400" stroke = "blue" stroke-width = "10"/>   
+                </g>
 
-            <g id = "sp7x">
-                <line x1= "0" y1 = "400" x2 = "200" y2 = "600" stroke = "blue" stroke-width = "10"/>
-                <line x1= "200" y1 = "400" x2 = "0" y2 = "600" stroke = "blue" stroke-width = "10"/>   
-            </g>
+                <g id = "sp7x">
+                    <line x1= "0" y1 = "400" x2 = "200" y2 = "600" stroke = "blue" stroke-width = "10"/>
+                    <line x1= "200" y1 = "400" x2 = "0" y2 = "600" stroke = "blue" stroke-width = "10"/>   
+                </g>
 
-            <g id = "sp8x">
-                <line x1= "200" y1 = "400" x2 = "400" y2 = "600" stroke = "blue" stroke-width = "10"/>
-                <line x1= "400" y1 = "400" x2 = "200" y2 = "600" stroke = "blue" stroke-width = "10"/>   
-            </g>
+                <g id = "sp8x">
+                    <line x1= "200" y1 = "400" x2 = "400" y2 = "600" stroke = "blue" stroke-width = "10"/>
+                    <line x1= "400" y1 = "400" x2 = "200" y2 = "600" stroke = "blue" stroke-width = "10"/>   
+                </g>
 
-            <g id = "sp9x">
-                <line x1= "400" y1 = "400" x2 = "600" y2 = "600" stroke = "blue" stroke-width = "10"/>
-                <line x1= "600" y1 = "400" x2 = "400" y2 = "600" stroke = "blue" stroke-width = "10"/>   
-            </g>
+                <g id = "sp9x">
+                    <line x1= "400" y1 = "400" x2 = "600" y2 = "600" stroke = "blue" stroke-width = "10"/>
+                    <line x1= "600" y1 = "400" x2 = "400" y2 = "600" stroke = "blue" stroke-width = "10"/>   
+                </g>
 
-            <g id = "sp1o">
-                <circle cx="100" cy="100" r="100" fill="red"/>
-                <circle cx="100" cy="100" r="90" fill="white"/>
-            </g>
+                <g id = "sp1o">
+                    <circle cx="100" cy="100" r="100" fill="red"/>
+                    <circle cx="100" cy="100" r="90" fill="#9EB6A0"/>
+                </g>
 
-            <g id = "sp2o">
-                <circle cx="300" cy="100" r="100" fill="red"/>
-                <circle cx="300" cy="100" r="90" fill="white"/>
-            </g>
+                <g id = "sp2o">
+                    <circle cx="300" cy="100" r="100" fill="red"/>
+                    <circle cx="300" cy="100" r="90" fill="#9EB6A0"/>
+                </g>
 
-            <g id = "sp3o">
-                <circle cx="500" cy="100" r="100" fill="red"/>
-                <circle cx="500" cy="100" r="90" fill="white"/>
-            </g>
+                <g id = "sp3o">
+                    <circle cx="500" cy="100" r="100" fill="red"/>
+                    <circle cx="500" cy="100" r="90" fill="#9EB6A0"/>
+                </g>
 
-            <g id = "sp4o">
-                <circle cx="100" cy="300" r="100" fill="red"/>
-                <circle cx="100" cy="300" r="90" fill="white"/>
-            </g>
+                <g id = "sp4o">
+                    <circle cx="100" cy="300" r="100" fill="red"/>
+                    <circle cx="100" cy="300" r="90" fill="#9EB6A0"/>
+                </g>
 
-            <g id = "sp5o">
-                <circle cx="300" cy="300" r="100" fill="red"/>
-                <circle cx="300" cy="300" r="90" fill="white"/>
-            </g>
+                <g id = "sp5o">
+                    <circle cx="300" cy="300" r="100" fill="red"/>
+                    <circle cx="300" cy="300" r="90" fill="#9EB6A0"/>
+                </g>
 
-            <g id = "sp6o">
-                <circle cx="500" cy="300" r="100" fill="red"/>
-                <circle cx="500" cy="300" r="90" fill="white"/>
-            </g>
+                <g id = "sp6o">
+                    <circle cx="500" cy="300" r="100" fill="red"/>
+                    <circle cx="500" cy="300" r="90" fill="#9EB6A0"/>
+                </g>
 
-            <g id = "sp7o">
-                <circle cx="100" cy="500" r="100" fill="red"/>
-                <circle cx="100" cy="500" r="90" fill="white"/>
-            </g>
+                <g id = "sp7o">
+                    <circle cx="100" cy="500" r="100" fill="red"/>
+                    <circle cx="100" cy="500" r="90" fill="#9EB6A0"/>
+                </g>
 
-            <g id = "sp8o">
-                <circle cx="300" cy="500" r="100" fill="red"/>
-                <circle cx="300" cy="500" r="90" fill="white"/>
-            </g>
+                <g id = "sp8o">
+                    <circle cx="300" cy="500" r="100" fill="red"/>
+                    <circle cx="300" cy="500" r="90" fill="#9EB6A0"/>
+                </g>
 
-            <g id = "sp9o">
-                <circle cx="500" cy="500" r="100" fill="red"/>
-                <circle cx="500" cy="500" r="90" fill="white"/>
-            </g>
+                <g id = "sp9o">
+                    <circle cx="500" cy="500" r="100" fill="red"/>
+                    <circle cx="500" cy="500" r="90" fill="#9EB6A0"/>
+                </g>
 
-            <g id = "grid">
-                <rect x="200" y="0" width="10" height="600" fill="black"/>
-                <rect x="400" y="0" width="10" height="600" fill="black"/>
-    
-                <rect x="0" y="200" width="600" height="10" fill="black"/>
-                <rect x="0" y="400" width="600" height="10" fill="black"/>
-            </g>
-        </svg>
+                <g id = "grid">
+                    <rect x="200" y="0" width="10" height="600" fill="black"/>
+                    <rect x="400" y="0" width="10" height="600" fill="black"/>
+        
+                    <rect x="0" y="200" width="600" height="10" fill="black"/>
+                    <rect x="0" y="400" width="600" height="10" fill="black"/>
+                </g>
+            </svg>
+
+            <p id ="results"></p>
+        </center>
     </body>
 </html>
