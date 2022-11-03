@@ -1,3 +1,18 @@
+//start of confetti
+const start = () => {
+    setTimeout(function() {
+        confetti.start()
+    }, 0);
+};
+
+//end of confetti
+const stop = () => {
+    setTimeout(function() {
+        confetti.stop()
+    }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+};
+
+
 var board = [["", "", ""],
              ["", "", ""],
              ["", "", ""]];
@@ -56,15 +71,19 @@ function elementClicked(evt, spotNumber){
         count = count+1;
     }
 
-    computerTurn();
     checkForWinner();
+    if(count !=9){
+        computerTurn();
+        checkForWinner();
+    }
+  
 }
 
 function computerTurn(){
 
     while(true){
-        var row = Math.floor(Math.random()*2+1);
-        var col = Math.floor(Math.random()*2+1);
+        var row = Math.floor(Math.random()*3);
+        var col = Math.floor(Math.random()*3);
         var box = (row * 3)+col+1;
     
 
@@ -78,64 +97,28 @@ function computerTurn(){
     }
 }
 
+
 function checkForWinner(){
-    //check for X win
-    //first row check
-    if(board[0][0]=="X" && board[0][1]=="X" && board[0][2]=="X"){
+    if(checkWin("X")){
         $("#results").text("You Won!");
-    //second row check
-    }else if(board[1][0]=="X" && board[1][1]=="X" && board[1][2]=="X"){
-        $("#results").text("You Won!");
-    //thrid row check
-    }else if(board[2][0]=="X" && board[2][1]=="X" && board[2][2]=="X"){
-        $("#results").text("You Won!");
-    //first column
-    }else if(board[0][0]=="X" && board[1][0]=="X" && board[2][0]=="X"){
-        $("#results").text("You Won!");
-    //second column
-    }else if(board[1][0]=="X" && board[1][1]=="X" && board[1][2]=="X"){
-        $("#results").text("You Won!");
-    //third column
-    }else if(board[2][0]=="X" && board[2][1]=="X" && board[2][2]=="X"){
-        $("#results").text("You Won!");
-    //first diagonal
-    }else if(board[0][0]=="X" && board[1][1]=="X" && board[2][2]=="X"){
-        $("#results").text("You Won!");
-    //second diagonal
-    }else if(board[0][2]=="X" && board[1][1]=="X" && board[2][0]=="X"){
-        $("#results").text("You Won!");
-
-
-    //check for 0 win
-    //first row check
-    }else if(board[0][0]=="O" && board[0][1]=="O" && board[0][2]=="O"){
+        start();
+        stop();
+    }else if(checkWin("O")){
         $("#results").text("You Lost");
-    //second row check
-    }else if(board[1][0]=="O" && board[1][1]=="O" && board[1][2]=="O"){
-        $("#results").text("You Lost");
-    //thrid row check
-    }else if(board[2][0]=="O" && board[2][1]=="O" && board[2][2]=="O"){
-        $("#results").text("You Lost");
-    //first column
-    }else if(board[0][0]=="O" && board[0][1]=="O" && board[0][2]=="O"){
-        $("#results").text("You Lost");
-    //second column
-    }else if(board[1][0]=="O" && board[1][1]=="O" && board[1][2]=="O"){
-        $("#results").text("You Lost");
-    //third column
-    }else if(board[2][0]=="O" && board[2][1]=="O" && board[2][2]=="O"){
-        $("#results").text("You Lost");
-    //first diagonal
-    }else if(board[0][0]=="O" && board[1][1]=="O" && board[2][2]=="O"){
-        $("#results").text("You Lost");
-    //second diagonal
-    }else if(board[0][2]=="O" && board[1][1]=="O" && board[2][0]=="O"){
-        $("#results").text("You Lost");
-
-    //no winner
     }else if(count != 9 ){
         $("#results").text("Keep Playing");
     }else{
         $("#results").text("Tie"); 
     }
+}
+
+function checkWin(token){
+    return (board[0][0]==token && board[0][1]==token && board[0][2]==token) ||
+           (board[1][0]==token && board[1][1]==token && board[1][2]==token) || 
+           (board[2][0]==token && board[2][1]==token && board[2][2]==token) ||
+           (board[0][0]==token && board[1][0]==token && board[2][0]==token) ||
+           (board[1][0]==token && board[1][1]==token && board[1][2]==token) ||
+           (board[2][0]==token && board[2][1]==token && board[2][2]==token) ||
+           (board[0][0]==token && board[1][1]==token && board[2][2]==token) ||
+           (board[0][2]==token && board[1][1]==token && board[2][0]==token);
 }
