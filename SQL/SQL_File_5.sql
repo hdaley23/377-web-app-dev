@@ -1,3 +1,20 @@
+SELECT *
+  FROM teachers 
+ WHERE tch_last_name = 'Bennett'
+   AND tch_first_name = 'Catherine'
+;
+
+SELECT *
+  FROM teachers
+ WHERE tch_id = 'stfX2000001634'
+;
+
+UPDATE teachers 
+   SET tch_last_name = 'Polk'
+ WHERE tch_last_name = 'Bennett'
+   AND tch_first_name = 'Catherine'
+;
+
 SELECT * 
  FROM schools
 ;
