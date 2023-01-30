@@ -1,5 +1,4 @@
 import math
-total = 0 
 prime = []
 
 def checkPrime(num):
@@ -9,7 +8,7 @@ def checkPrime(num):
     return True
 
 
-for i in range(2,1000000):
+for i in range(2,105000):
     if checkPrime(i):
         prime.append(i)
 
